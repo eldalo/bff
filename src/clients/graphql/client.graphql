@@ -1,0 +1,62 @@
+"""
+customerGroups
+"""
+type CustomerGroups {
+  group: String!
+  group1: String
+  group2: String
+  group3: String
+  group4: String
+  group5: String
+}
+
+"""
+payments
+"""
+type PaymentMethods {
+  typeCredit: String
+  creditLimit: Int
+  creditUsed: Int
+  amountAvailable: Int
+}
+
+"""
+clients
+"""
+type Client {
+  uuid: String!
+  address: String
+  blocked: String
+  cellPhone: String
+  channel: String
+  country: String
+  customerGroups: CustomerGroups
+  customerSchema: Int
+  distrChan: String
+  division: String
+  fiscalCode1: String
+  fiscalCode2: String
+  frequency: String
+  frequencyDays: String
+  idPortfolio: String
+  immediateDelivery: String
+  industryCode: String
+  industryCode1: String
+  isEnrollment: Boolean
+  name: String
+  name2: String
+  office: String
+  paymentCondition: String
+  paymentMethods: [PaymentMethods]
+  priceGroup: String
+  priceList: String
+  routeId: String
+  salesOrg: String
+  supplyCenter: String
+  vendorGroup: String
+}
+
+type Query {
+  getAllClients: [Client!]!
+  getClientById(id: String!): Client!
+}
